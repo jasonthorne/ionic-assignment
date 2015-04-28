@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -56,18 +65,31 @@
   </head>
   <body ng-app="ionic-navview"><!-- CHENGE THIS -->
 	<ion-nav-view>
-	</ion-nav-view>
-		
+	<ion-nav-bar class="bar-calm">
+		</ion-nav-bar>
+	</ion-nav-view>		
+
 	<!-- PAGE1 -->
 	
 	<script type = "text/ng-template" id="state1.html">
-	<ion-view view-title="Home">
+	<ion-view view-title="Calorie counter">
 	  <ion-content>
-		<div class = "bar bar-header bar-light">
-		  <h1 class = "title">State 1 header text</h1>
-		</div>
-            <h2>State 1</h2>
-	    <button class="button" ui-sref="state2">Go to state 2.</button> 
+	    <ul class="list">
+		<li class="item">
+			<h6>fruits</h6>
+		</li>
+	        <li  class="item">
+                        <h6>grains</h6>
+                </li>
+                <li class="item">
+                        <h6>Vegetables</h6>
+                </li>
+	        <li class="item">
+                        <h6>meats</h6>
+                </li>
+	   </ul>
+		<!-- home button -->
+	    <button class="button icon ion-home button-block button-clear" ui-sref="state1"></button>
 	  </ion-content>
 	</ion-view>
 	</script>
