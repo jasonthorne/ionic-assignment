@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -76,10 +77,12 @@
 	<script type = "text/ng-template" id="state1.html">
 	<ion-view view-title="Calorie Counter">
 	  <ion-content>
+		<br />
 			<button class="button button-block button-clear" ui-sref="state2">Fruits</button>
                         <button class="button button-block button-clear" ui-sref="state3">Grains</button>
                         <button class="button button-block button-clear" ui-sref="state4">Vegetables</button>
                         <button class="button button-block button-clear" ui-sref="state5">Meats</button>
+
  	  </ion-content>
 	</ion-view>
 	</script>
@@ -89,35 +92,48 @@
         <script type = "text/ng-template" id="state2.html">
         <ion-view view-title="Fruits">
           <ion-content>
-          <div align="center"><h5>Select eaten fruits</h5></div>
-         	<a class="button" onclick="addCals('+2')">
-                <h3>Apple</h3>
-            	</a>
-	     
+          <div align="center"><h5>Select eaten fruits</h5><h6>1 per serving</h6></div>
+
             <ul class="list">
-            <li class="item item-checkbox">
+             <li class="item item-checkbox">
              <label class="checkbox">
-             <input type="checkbox">
+             <input type="checkbox" onClick="addCals('+72')">
+             </label>
+               <h3>Apple</h3>
+             </li>
+				
+             <li class="item item-checkbox">
+             <label class="checkbox">
+             <input type="checkbox" onClick="addCals('+62')">
              </label>
                <h3>Orange</h3>
              </li>
-
-            <li class="item item-checkbox">
+		
+             <li class="item item-checkbox">
              <label class="checkbox">
-             <input type="checkbox">
+             <input type="checkbox" onClick="addCals('+96')">
              </label>
-                <h3>Pear</h3>
+               <h3>Pear</h3>
              </li>
-
-            <li class="item item-checkbox">
+		
+             <li class="item item-checkbox">
              <label class="checkbox">
-             <input type="checkbox">
+             <input type="checkbox" onClick="addCals('+89')">
              </label>
-                <h3>Banana</h3>
+               <h3>Banana</h3>
              </li>
-        </ul>
-	
-	<div id ="calTotal">0</div>
+           </ul>
+		
+	   <br />
+	   <div align="center"><h5>Total calories:&nbsp;
+	      <div id ="calTotal">0</h5></div>
+	   </div>
+
+	    <div>
+             <center>
+                <button class="button button-small  button-positive" onclick="reset()">Reset total</button>
+             </center>
+            </div>
 
             <button class="button icon ion-home button-block button-clear" ui-sref="state1"></button>
 
@@ -125,102 +141,113 @@
         </ion-view>
        </script>
 
-        <script type="text/javascript">
-
-        function addCals(calNum)
-        {
-           var plusMinus = parseInt(calNum); //rename plusMinus!!
-           var calSum = parseInt(document.getElementById("calTotal").innerHTML) + plusMinus;
-        }
-
-        </script>
-
-
 	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++grains -->
 
 	<script type = "text/ng-template" id="state3.html">
         <ion-view view-title="Grains">
           <ion-content>
-	  <div align="center"><h5>Select eaten grains</h5></div>
-	   <ul class="list">
-                       
-	    <li class="item item-checkbox">
-	     <label class="checkbox">
-	     <input type="checkbox">
-	     </label>
-		<h3>Oats</h3>
-	     </li>      
-	
-	    <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+          <div align="center"><h5>Select eaten grains</h5></div>
+
+            <ul class="list">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+194')">
+             </label>
+               <h3>Oats</h3>
+             </li>
+
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+186')">
              </label>
                <h3>Pasta</h3>
              </li>
 
-	    <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+56')">
              </label>
-                <h3>Rice</h3>
+               <h3>Rice</h3>
              </li>
 
-	    <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+144')">
              </label>
-                <h3>Bread</h3>
+               <h3>Bread</h3>
              </li>
-	</ul>
+           </ul>
 
-	    <button class="button icon ion-home button-block button-clear" ui-sref="state1"></button>
-     
-          </ion-content>
-        </ion-view>
-	</script>
+	    <br />
+           <div align="center"><h5>Total calories:&nbsp;
+              <div id ="calTotal">0</h5></div>
+           </div>
 
-	 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++vegetables -->
-
-        <script type = "text/ng-template" id="state4.html">
-        <ion-view view-title="Vegetables">
-          <ion-content>
-          <div align="center"><h5>Select eaten vegetables</h5></div>
-           <ul class="list">
-
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
-             </label>
-                <h3>Lettuce</h3>
-             </li>
-
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
-             </label>
-               <h3>Potatoes</h3>
-             </li>
-
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
-             </label>
-                <h3>Carrots</h3>
-             </li>
-
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
-             </label>
-                <h3>Peas</h3>
-             </li>
-        </ul>
+            <div>
+             <center>
+                <button class="button button-small  button-positive" onclick="reset()">Reset total</button>
+             </center>
+            </div>
 
             <button class="button icon ion-home button-block button-clear" ui-sref="state1"></button>
 
           </ion-content>
         </ion-view>
-        </script>
+       </script>
+
+	 <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++vegetables -->
+		
+	 <script type = "text/ng-template" id="state4.html">
+        <ion-view view-title="Vegetables">
+          <ion-content>
+          <div align="center"><h5>Select eaten vegetables</h5></div>
+
+            <ul class="list">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+4')">
+             </label>
+               <h3>Lettuce</h3>
+             </li>
+
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+19')">
+             </label>
+               <h3>potatoes</h3>
+             </li>
+
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+10')">
+             </label>
+               <h3>Carrots</h3>
+             </li>
+
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+25')">
+             </label>
+               <h3>Peas</h3>
+             </li>
+           </ul>
+
+	   <br />
+           <div align="center"><h5>Total calories:&nbsp;
+              <div id ="calTotal">0</h5></div>
+           </div>
+
+            <div>
+             <center>
+                <button class="button button-small  button-positive" onclick="reset()">Reset total</button>
+             </center>
+            </div>
+
+            <button class="button icon ion-home button-block button-clear" ui-sref="state1"></button>
+
+          </ion-content>
+        </ion-view>
+       </script>
 
 	 <!-- Meats+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
@@ -228,62 +255,74 @@
         <ion-view view-title="Meats">
           <ion-content>
           <div align="center"><h5>Select eaten meats</h5></div>
-           <ul class="list">
 
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+            <ul class="list">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+313')">
              </label>
-                <h3>Beef</h3>
+               <h3>Beef</h3>
              </li>
 
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+246')">
              </label>
                <h3>Lamb</h3>
              </li>
 
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+541')">
              </label>
-                <h3>Pork</h3>
+               <h3>Pork</h3>
              </li>
 
-            <li class="item item-checkbox">
-             <label class="checkbox">
-             <input type="checkbox">
+             <li class="item item-checkbox">
+             <label class="checkbox" onClick="addCals('0')">
+             <input type="checkbox" onClick="addCals('+219')">
              </label>
-                <h3>Chicken</h3>
+               <h3>Chicken</h3>
              </li>
-        </ul>
+           </ul>
+		
+	   <br />
+           <div align="center"><h5>Total calories:&nbsp;
+              <div id ="calTotal">0</h5></div>
+           </div>
+
+            <div>
+             <center>
+                <button class="button button-small  button-positive" onclick="reset()">Reset total</button>
+             </center>
+            </div>
+
             <button class="button icon ion-home button-block button-clear" ui-sref="state1"></button>
 
           </ion-content>
         </ion-view>
-        </script>
+       </script>
 
-	<!-- +++++++++++++++++++++++++++++++ -->
+	<!-- METHODS============================================-->
 
-	<!-- <script type="text/javascript">
-		
-	function addCals(calNum)
-	{
-	   var plusMinus = parseInt(calNum); //rename plusMinus!!
-	   var calSum = parseInt(document.getElementById("calTotal").innerHTML) + plusMinus;
-	}
+	 <script type="text/javascript">
 	
-	</script> -->
+	//adding calories
+         function addCals(usrNum)
+        {
+           var calNum = parseInt(usrNum);
+           var calSum = parseInt(document.getElementById("calTotal").innerHTML) + calNum;
 
+        document.getElementById("calTotal").innerHTML = calSum;
+        }
 
-  <!-- <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">My Title3</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane> -->
+	//reset total
+	function reset()
+	{
+	  document.getElementById("calTotal").innerHTML = 0;
+	}
+
+        </script>
 
   </body>
 </html>
