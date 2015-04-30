@@ -3,7 +3,9 @@
 <!--============================= BEGINNING OF APP================================ -->
 
 <!DOCTYPE html>
+<!-- start of html -->
 <html>
+<!-- start of head -->
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -39,6 +41,7 @@
 	state5: Meats
 	 -->
 
+<!-- start of script for states -->
 	<script type ="text/javascript">
 	angular.module('ionic-navview', ['ionic'])
 	
@@ -76,41 +79,43 @@
 	
 	})
 	</script>
-
+<!-- end of script for states -->
 <!--+++++++++++++++++++++++++++end of states  -->
-
+<!-- end of head -->
   </head>
 
 <!-- beginning of body-->
-
-	<!-- This is the nav view of the app. It has been given a nav-bar inorder to display the title of each state within the app when visited -->
+<!-- This is the nav view of the app. It has been given a nav-bar inorder to display the title of each state within the app when visited -->
   <body ng-app="ionic-navview">
 	<ion-nav-view>
 	<ion-nav-bar class="bar-calm">
 		</ion-nav-bar>
 	</ion-nav-view>		
 
+
 	<!-- +++++++++++++++++++++++++++++Calorie Counter++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
 	<!-- This is the first state directed to when the ap opens. As such it is given the title "Calorie Counter" as this is the name of the app, and will therefore be displayed on the nav bar. This page contains the links to each other state thorugh the use of buttons  -->	
 
+<!-- start of script for state 1 -->
 	<script type = "text/ng-template" id="state1.html">
 	<ion-view view-title="Calorie Counter">
 	  <ion-content>
-		<br />
-			<button class="button button-block button-clear" ui-sref="state2">Fruits</button>
-                        <button class="button button-block button-clear" ui-sref="state3">Grains</button>
-                        <button class="button button-block button-clear" ui-sref="state4">Vegetables</button>
-                        <button class="button button-block button-clear" ui-sref="state5">Meats</button>
-
- 	  </ion-content>
+		 <br />
+                 <button class="button button-block button-clear" ui-sref="state2">Fruits</button>
+                 <button class="button button-block button-clear" ui-sref="state3">Grains</button>
+                 <button class="button button-block button-clear" ui-sref="state4">Vegetables</button>
+                 <button class="button button-block button-clear" ui-sref="state5">Meats</button>
+           </ion-content>
 	</ion-view>
 	</script>
+<!-- end of script for state 1 -->
+
 
 	 <!--+++++++++++++++++++++++++++++ Fruits +++++++++++++++++++++++++++++++++++++++++++++ -->
 
-	<!-- This is for state 2, which represents the fruit items for selection by the user.
-	 This is done through the user selecting the fruit(s) of their choice. The value of the calories contained from that fruit are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal". 
+         <!-- This is for state 2, which represents the fruit items for selection by the user.
+         This is done through the user selecting the fruit(s) of their choice. The value of the calories contained from that fruit are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal". 
 
 There is a button at the bottom of the screen to allow the user to reset the total calorie sum of the items selected. This is done by invoking a funcion called "reset", which is explained in further detail in the comments beside it.
 
@@ -126,6 +131,8 @@ Pear: 96
 Banana: 89
 -->
 
+
+<!-- start of script for state 2 -->
         <script type = "text/ng-template" id="state2.html">
         <ion-view view-title="Fruits">
           <ion-content>
@@ -177,11 +184,14 @@ Banana: 89
           </ion-content>
         </ion-view>
        </script>
+<!-- end of script for state 2 -->
+
+
 
 	 <!--+++++++++++++++++++++++++++++ Grains +++++++++++++++++++++++++++++++++++++++++++++ -->
 
         <!-- This is for state 3, which represents the grain items for selection by the user.
-         This is done through the user selecting the grain(s) of their choice. The value of the calories contained from that fruit are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal".
+         This is done through the user selecting the grain(s) of their choice. The value of the calories contained from that grain are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal".
 
 There is a button at the bottom of the screen to allow the user to reset the total calorie sum of the items selected. This is done by invoking a funcion called "reset", which is explained in further detail in the comments beside it.
 
@@ -197,7 +207,7 @@ Rice: 56
 Bread: 144
 -->
 
-
+<!-- start of script for state 3 -->
        <script type = "text/ng-template" id="state3.html">
         <ion-view view-title="Grains">
           <ion-content>
@@ -233,7 +243,7 @@ Bread: 144
              </li>
            </ul>
 
-	    <br />
+	   <br />
            <div align="center"><h5>Total calories:&nbsp;
               <div id ="calTotal">0</h5></div>
            </div>
@@ -249,11 +259,13 @@ Bread: 144
           </ion-content>
         </ion-view>
        </script>
+<!-- end of script for state 3 -->
+
 
        <!--+++++++++++++++++++++++++++++ Vegetables +++++++++++++++++++++++++++++++++++++++++++++ -->
 
         <!-- This is for state 4, which represents the vegetable items for selection by the user.
-         This is done through the user selecting the vegetables of their choice. The value of the calories contained from that fruit are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal".
+         This is done through the user selecting the vegetables of their choice. The value of the calories contained from those vegetables are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal".
 
 There is a button at the bottom of the screen to allow the user to reset the total calorie sum of the items selected. This is done by invoking a funcion called "reset", which is explained in further detail in the comments beside it.
 
@@ -269,7 +281,7 @@ Carrots: 10
 Peas: 25
 -->
 
-		
+<!-- start of script for state 4 -->		
 	 <script type = "text/ng-template" id="state4.html">
         <ion-view view-title="Vegetables">
           <ion-content>
@@ -321,11 +333,13 @@ Peas: 25
           </ion-content>
         </ion-view>
        </script>
+<!-- end of script for state 4 -->
+
 
 	<!--+++++++++++++++++++++++++++++ Meats +++++++++++++++++++++++++++++++++++++++++++++ -->
 
         <!-- This is for state 5, which represents the meat  items for selection by the user.
-         This is done through the user selecting the meat(s) of their choice. The value of the calories contained from that fruit are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal".
+         This is done through the user selecting the meat(s) of their choice. The value of the calories contained from that meat are then passed into a function found at the bottom of this program called 'addCals' The function then adds that ammount of calories to a variable known as 'calSum', which contains the total ammount of calories of each item selected. The workings of this method are further explained in comments found at the method itself. This is then printed to the screen in html using the div id "calTotal".
 
 There is a button at the bottom of the screen to allow the user to reset the total calorie sum of the items selected. This is done by invoking a funcion called "reset", which is explained in further detail in the comments beside it.
 
@@ -341,6 +355,7 @@ Pork: 541
 Chicken: 219
 -->
 
+<!-- start of script for state 5 -->
         <script type = "text/ng-template" id="state5.html">
         <ion-view view-title="Meats">
           <ion-content>
@@ -392,23 +407,27 @@ Chicken: 219
           </ion-content>
         </ion-view>
        </script>
+<!-- end of script for state 5 -->
+
+
 
 	<!-- ============================Funtions====================================-->
+        <!-- These are the functions responsible for effecting the calorie count within the program -->
 
-<!-- These are the functions responsible for effecting the calorie count within the program -->
-
-	 <script type="text/javascript">
+<!-- start of script for functions -->
+      <script type="text/javascript">
 	
 	//addCals function. Used for summing of calories
 
 	//This function, when invoked, takes in arguement called usrNum. Which represents a value passed in by the user, by selecting any checkbox from the states 2-5, outlined above. This is then parsed into an int and stored in the variable "calNum". The variable 'calSum' representing the total calorie sum is then declared. This is asigned a value equal to that of the inner HTML property of 'calTotal', plus the value of calNum, declared above. The property of 'calTotal' is then asigned the value of calSum, giving it the total ammount of calories selected by the user.    
   
-         function addCals(usrNum)
+         
+	function addCals(usrNum)
         {
            var calNum = parseInt(usrNum);
            var calSum = parseInt(document.getElementById("calTotal").innerHTML) + calNum;
 
-        document.getElementById("calTotal").innerHTML = calSum;
+           document.getElementById("calTotal").innerHTML = calSum;
         }
 
 	//reset function. Used for reasigning the value of the inner html property 'calTotal'
@@ -419,11 +438,13 @@ Chicken: 219
 	  document.getElementById("calTotal").innerHTML = 0;
 	}
 
-        </script>
+      </script>
+<!-- end of script for functions -->
 
   </body>
+<!-- end of body -->
 </html>
-
+<!-- end of html -->
 
 <!--============================= END OF APP================================ -->
 
